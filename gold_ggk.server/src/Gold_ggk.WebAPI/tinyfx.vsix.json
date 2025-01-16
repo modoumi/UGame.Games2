@@ -1,0 +1,63 @@
+{
+  "DockerPublish": {
+    "DefaultConfig": "default",
+    "Configs": [
+        {
+            "Name": "default",
+            "Desc": "默认的配置",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "192.168.1.121",
+            "Port": "22",
+            "Username": "root",
+            "Password": "Ing*zhixin@2022",
+            "IsSsh": false,
+            "ServerPath": "/root/hosts/Gold_ggk.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "images",
+            "ImgServerPath": "/root/hosts/Gold_ggk.WebAPI/images",
+            "Containers": [
+                {
+                    "Name": "gold_ggk.webapi.01",
+                    "PortString": "-p 6600:80",
+                    "EnvString": "-e DOTNET_ENVIRONMENT=Testing",
+                    "LimitCoreFile": true,
+                    "ServerPath": "",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": false,
+                    "IsAspNet": false
+                }
+            ]
+        },
+        {
+            "Name": "qa",
+            "Desc": "测试环境",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "192.168.1.128",
+            "Port": "22",
+            "Username": "root",
+            "Password": "Ing*zhixin@2022",
+            "IsSsh": false,
+            "ServerPath": "/root/hosts/Gold_ggk.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "",
+            "ImgServerPath": "",
+            "Containers": [
+                {
+                    "Name": "gold_ggk.webapi.01",
+                    "PortString": "-p 6600:80",
+                    "EnvString": "-e DOTNET_ENVIRONMENT=qa",
+                    "LimitCoreFile": true,
+                    "ServerPath": "",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": false,
+                    "IsAspNet": false
+                }
+            ]
+        }
+    ]
+  }
+}

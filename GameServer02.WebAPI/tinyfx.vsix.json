@@ -1,0 +1,91 @@
+{
+  "DockerPublish": {
+    "DefaultConfig": "default",
+    "Configs": [
+        {
+            "Name": "default",
+            "Desc": "默认的配置",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "192.168.1.121",
+            "Port": "22",
+            "Username": "root",
+            "Password": "Ing*zhixin@2022",
+            "IsSsh": false,
+            "ServerPath": "/root/hosts/GameServer02.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "images",
+            "ImgServerPath": "/root/hosts/GameServer02.WebAPI/images",
+            "Containers": [
+                {
+                    "Name": "gameserver02.webapi.01",
+                    "PortString": "-p 7002:80",
+                    "EnvString": "-e DOTNET_ENVIRONMENT=dev",
+                    "LimitCoreFile": true,
+                    "ServerPath": "",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": false,
+                    "IsAspNet": false
+                }
+            ]
+        },
+        {
+            "Name": "fat",
+            "Desc": "192.168.1.128",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "192.168.1.128",
+            "Port": "22",
+            "Username": "root",
+            "Password": "Ing*zhixin@2022",
+            "IsSsh": false,
+            "ServerPath": "/root/hosts/GameServer02.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "",
+            "ImgServerPath": "",
+            "Containers": [
+                {
+                    "Name": "gameserver02.webapi.01",
+                    "PortString": "-p 7002:80",
+                    "EnvString": "-e DOTNET_ENVIRONMENT=fat",
+                    "LimitCoreFile": true,
+                    "ServerPath": "",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": false,
+                    "IsAspNet": false
+                }
+            ]
+        },
+        {
+            "Name": "uat",
+            "Desc": "192.168.1.129",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "192.168.1.129",
+            "Port": "22",
+            "Username": "root",
+            "Password": "Ing*zhixin@2022",
+            "IsSsh": false,
+            "ServerPath": "/root/hosts/GameServer02.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "",
+            "ImgServerPath": "",
+            "Containers": [
+                {
+                    "Name": "gameserver02.webapi.01",
+                    "PortString": "-p 7002:80",
+                    "EnvString": "-e DOTNET_ENVIRONMENT=uat",
+                    "LimitCoreFile": true,
+                    "ServerPath": "",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": false,
+                    "IsAspNet": false
+                }
+            ]
+        }
+    ]
+  }
+}

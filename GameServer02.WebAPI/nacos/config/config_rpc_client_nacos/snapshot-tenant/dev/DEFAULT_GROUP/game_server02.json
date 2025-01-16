@@ -1,0 +1,82 @@
+{
+    "AppOptions": {
+        "AppId": "gameserver02",
+        "ServerType": "Normal",
+        "ServerUrl": "http://192.168.1.121:7002",
+        "UseVerifyClientRequest": false
+    },
+    "Project": {
+        "ProjectId": "gameserver02",
+        "Description": "GameServer02-WebAPI",
+        "MinThreads": 0,
+        "ConsoleLogLevel": "Debug",
+        "ResponseErrorDetail": true,
+        "IsDebugEnvironment": true
+    },
+    "Data": {
+        "ConnectionStrings": {
+            "game": {
+                "ProviderName": "mysql",
+                "ConnectionString": "server=192.168.1.120;port=3306;database=gdb;user id=root;password=root;sslmode=Disabled;allowuservariables=True",
+                "ReadConnectionString": "",
+                "CommandTimeout": "30",
+                "InstProvider": "",
+                "OrmMap": "BestShooter.DAL;Dwin_poker.DAL;Gold_ggk.DAL;Dragon_tower.DAL;Mines.DAL"
+            }
+        }
+    },
+    "RabbitMQ": {
+        "MessageAssemblies": [ "Xxyy.GameEAPI.dll" ],
+        "ConsumerAssemblies": [
+            "BestShooter.BLL.dll",
+            "Dragon_tower.BLL.dll",
+            "Dwin_poker.BLL.dll",
+            "Gold_ggk.BLL.dll",
+            "Mines.BLL.dll"
+        ]
+    },
+    "AutoMapper": {
+        "Assemblies": [
+            "BestShooter.BLL.dll",
+            "Dragon_tower.BLL.dll",
+            "Dwin_poker.BLL.dll",
+            "Gold_ggk.BLL.dll",
+            "Mines.BLL.dll",
+            "Xxyy.GameEAPI.dll"
+        ]
+    },
+    "HttpClient": {
+        "Clients": {
+            "xxyy.banks": {
+                "BaseAddress": "http://192.168.1.121:9008",
+                "RequestHeaders": [],
+                "Timeout": 20000,
+                "RetryCount": 3,
+                "Settings": []
+            },
+            "xxyy.server": {
+                "BaseAddress": "http://192.168.1.121:9009",
+                "RequestHeaders": [],
+                "Timeout": 20000,
+                "RetryCount": 3,
+                "Settings": []
+            },
+            "xxyy_partners": {
+                "BaseAddress": "http://192.168.1.121:9010",
+                "RequestHeaders": [],
+                "Timeout": 100000,
+                "RetryCount": 3,
+                "Settings": []
+            }
+        }
+    },
+    "IDGenerator": {
+        "Enabled": true
+    },
+    "AspNet": {
+        "Swagger": {
+            "Enabled": true,
+            "UseSchemaFullName": true
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "OrmGen": [
+        {
+            "ConnStrInfo": {
+                "Provider": 7,
+                "ConnectionString": "server=192.168.1.120;port=3306;database=gdb;user id=root;password=root;sslmode=Disabled;allowuservariables=True",
+                "DataSource": "192.168.1.120",
+                "Database": "gdb",
+                "FileName": null,
+                "UserID": "root",
+                "Password": "root",
+                "ConnectTimeout": 15
+            },
+            "OrmSettings": {
+                "Namespaces": "BestShooter.DAL",
+                "OutputPath": ""
+            },
+            "DbInitSettings": {
+                "CreateSqlFile": null,
+                "InitDataFile": null
+            }
+        }
+    ],
+    "SqlSugar": {
+        "DefaultElement": "gdb",
+        "Elements": [
+            {
+                "Name": "gdb",
+                "DatabaseType": 0,
+                "ConnectionString": "server=192.168.1.120;database=gdb;user id=root;port=3306;password=root;sslmode=Disabled;allowuservariables=True",
+                "OutputPath": "",
+                "Namespace": "BestShooter.DAL",
+                "UseSubPath": false,
+                "UseTinyFx": true,
+                "UseSugarConfigId": true,
+                "IsDeletePartial": true
+            }
+        ]
+    }
+}

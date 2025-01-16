@@ -1,0 +1,63 @@
+{
+  "DockerPublish": {
+    "DefaultConfig": "default",
+    "Configs": [
+        {
+            "Name": "default",
+            "Desc": "默认的配置",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "192.168.1.121",
+            "Port": "22",
+            "Username": "root",
+            "Password": "Ing*zhixin@2022",
+            "IsSsh": false,
+            "ServerPath": "/root/hosts/Dwin_poker.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "images",
+            "ImgServerPath": "/root/hosts/Dwin_poker.WebAPI/images",
+            "Containers": [
+                {
+                    "Name": "dwin_poker.webapi.01",
+                    "PortString": "-p 9007:80",
+                    "EnvString": "-e DOTNET_ENVIRONMENT=Testing",
+                    "LimitCoreFile": true,
+                    "ServerPath": "",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": false,
+                    "IsAspNet": false
+                }
+            ]
+        },
+        {
+            "Name": "qa",
+            "Desc": "测试环境",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "192.168.1.128",
+            "Port": "22",
+            "Username": "root",
+            "Password": "Ing*zhixin@2022",
+            "IsSsh": false,
+            "ServerPath": "/root/hosts/Dwin_poker.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "",
+            "ImgServerPath": "",
+            "Containers": [
+                {
+                    "Name": "dwin_poker.webapi.01",
+                    "PortString": "-p 9007:80",
+                    "EnvString": "-e DOTNET_ENVIRONMENT=qa",
+                    "LimitCoreFile": true,
+                    "ServerPath": "",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": false,
+                    "IsAspNet": false
+                }
+            ]
+        }
+    ]
+  }
+}

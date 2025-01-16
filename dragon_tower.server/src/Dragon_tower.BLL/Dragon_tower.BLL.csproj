@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;0612;0105</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;0612;0105</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CollectSvc\Process\**" />
+    <EmbeddedResource Remove="CollectSvc\Process\**" />
+    <None Remove="CollectSvc\Process\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xxyy.GameEAPI" Version="1.0.51" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dragon_tower.DAL\Dragon_tower.DAL.csproj" />
+  </ItemGroup>
+
+</Project>

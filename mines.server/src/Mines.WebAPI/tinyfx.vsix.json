@@ -1,0 +1,63 @@
+{
+    "DockerPublish": {
+        "DefaultConfig": "default",
+        "Configs": [
+            {
+                "Name": "default",
+                "Desc": "192.168.1.128-qa环境",
+                "BuildMode": 0,
+                "DockerfilePath": "",
+                "ServerIp": "192.168.1.128",
+                "Port": "22",
+                "Username": "root",
+                "Password": "Ing*zhixin@2022",
+                "IsSsh": false,
+                "ServerPath": "/root/hosts/Mines.WebAPI/upload",
+                "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+                "ImgLocalPath": "",
+                "ImgServerPath": "",
+                "Containers": [
+                    {
+                        "Name": "mines.webapi.01",
+                        "PortString": "-p 6602:80",
+                        "EnvString": "-e DOTNET_ENVIRONMENT=qa",
+                        "LimitCoreFile": true,
+                        "ServerPath": "",
+                        "IsDefault": true,
+                        "ServerType": null,
+                        "IsHost": false,
+                        "IsAspNet": false
+                    }
+                ]
+            },
+            {
+                "Name": "test",
+                "Desc": "默认的配置",
+                "BuildMode": 0,
+                "DockerfilePath": "",
+                "ServerIp": "192.168.1.121",
+                "Port": "22",
+                "Username": "root",
+                "Password": "Ing*zhixin@2022",
+                "IsSsh": false,
+                "ServerPath": "/root/hosts/Mines.WebAPI/upload",
+                "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+                "ImgLocalPath": "images",
+                "ImgServerPath": "/root/hosts/Mines.WebAPI/images",
+                "Containers": [
+                    {
+                        "Name": "mines.webapi.01",
+                        "PortString": "-p 6602:80",
+                        "EnvString": "-e DOTNET_ENVIRONMENT=Testing",
+                        "LimitCoreFile": true,
+                        "ServerPath": "",
+                        "IsDefault": true,
+                        "ServerType": null,
+                        "IsHost": false,
+                        "IsAspNet": false
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TinyFx" Version="3.17.54" />
+    <PackageReference Include="TinyFx.AspNet.Hosting" Version="3.17.54" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\best_shooter.server\src\BestShooter.BLL\BestShooter.BLL.csproj" />
+    <ProjectReference Include="..\dragon_tower.server\src\Dragon_tower.BLL\Dragon_tower.BLL.csproj" />
+    <ProjectReference Include="..\dwin_poker.server\src\Dwin_poker.BLL\Dwin_poker.BLL.csproj" />
+    <ProjectReference Include="..\gold_ggk.server\src\Gold_ggk.BLL\Gold_ggk.BLL.csproj" />
+    <ProjectReference Include="..\mines.server\src\Mines.BLL\Mines.BLL.csproj" />
+  </ItemGroup>
+
+</Project>

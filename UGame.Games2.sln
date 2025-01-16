@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dragon_tower.server", "dragon_tower.server", "{EA554DF5-527D-4E58-A6DF-C24B324FE106}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dragon_tower.BLL", "dragon_tower.server\src\Dragon_tower.BLL\Dragon_tower.BLL.csproj", "{BB0F546D-6CBE-4CCE-BC80-95F450077E28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dragon_tower.DAL", "dragon_tower.server\src\Dragon_tower.DAL\Dragon_tower.DAL.csproj", "{8DF5B43C-0C87-472F-AF58-8DE515CA43C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "best_shooter.server", "best_shooter.server", "{912DFA04-8681-4811-8C74-C19008994DA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestShooter.BLL", "best_shooter.server\src\BestShooter.BLL\BestShooter.BLL.csproj", "{ADD133D2-21C4-4126-9587-C5E0B2BC4580}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestShooter.DAL", "best_shooter.server\src\BestShooter.DAL\BestShooter.DAL.csproj", "{7A81463A-D148-4622-BE3C-1E220AC27080}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestShooter.WebAPI", "best_shooter.server\src\BestShooter.WebAPI\BestShooter.WebAPI.csproj", "{232B2D17-917F-447E-B347-170C6E7D47FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dwin_poker.server", "dwin_poker.server", "{4DB922FC-6F41-45DA-A8A4-BD7831214243}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gold_ggk.server", "gold_ggk.server", "{8FA63A51-758C-4987-B3EA-3A4F54A21314}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dwin_poker.BLL", "dwin_poker.server\src\Dwin_poker.BLL\Dwin_poker.BLL.csproj", "{CC637795-28D2-4D2E-B680-CB7F0BC188E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dwin_poker.DAL", "dwin_poker.server\src\Dwin_poker.DAL\Dwin_poker.DAL.csproj", "{E8D0C237-F8D9-4C64-A0B9-8E8202731F67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gold_ggk.BLL", "gold_ggk.server\src\Gold_ggk.BLL\Gold_ggk.BLL.csproj", "{21E14E43-0A21-46A5-9EFD-9B9A9D682C7B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gold_ggk.DAL", "gold_ggk.server\src\Gold_ggk.DAL\Gold_ggk.DAL.csproj", "{BF1EBFA5-09DF-4E9C-8464-D1385285D71C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mines.server", "mines.server", "{0FDFB744-D24D-4845-92F3-0741F2C2C013}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mines.BLL", "mines.server\src\Mines.BLL\Mines.BLL.csproj", "{DD4EB349-9758-4339-B46B-52B646A1D430}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mines.DAL", "mines.server\src\Mines.DAL\Mines.DAL.csproj", "{789822D6-D536-42B8-BA68-330433BC93E6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameServer02.WebAPI", "GameServer02.WebAPI\GameServer02.WebAPI.csproj", "{B67DB6A6-2215-4C30-A479-CCC261B619E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB0F546D-6CBE-4CCE-BC80-95F450077E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB0F546D-6CBE-4CCE-BC80-95F450077E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB0F546D-6CBE-4CCE-BC80-95F450077E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB0F546D-6CBE-4CCE-BC80-95F450077E28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF5B43C-0C87-472F-AF58-8DE515CA43C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF5B43C-0C87-472F-AF58-8DE515CA43C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF5B43C-0C87-472F-AF58-8DE515CA43C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF5B43C-0C87-472F-AF58-8DE515CA43C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD133D2-21C4-4126-9587-C5E0B2BC4580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD133D2-21C4-4126-9587-C5E0B2BC4580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD133D2-21C4-4126-9587-C5E0B2BC4580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD133D2-21C4-4126-9587-C5E0B2BC4580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A81463A-D148-4622-BE3C-1E220AC27080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A81463A-D148-4622-BE3C-1E220AC27080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A81463A-D148-4622-BE3C-1E220AC27080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A81463A-D148-4622-BE3C-1E220AC27080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232B2D17-917F-447E-B347-170C6E7D47FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232B2D17-917F-447E-B347-170C6E7D47FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232B2D17-917F-447E-B347-170C6E7D47FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232B2D17-917F-447E-B347-170C6E7D47FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC637795-28D2-4D2E-B680-CB7F0BC188E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC637795-28D2-4D2E-B680-CB7F0BC188E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC637795-28D2-4D2E-B680-CB7F0BC188E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC637795-28D2-4D2E-B680-CB7F0BC188E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D0C237-F8D9-4C64-A0B9-8E8202731F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D0C237-F8D9-4C64-A0B9-8E8202731F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D0C237-F8D9-4C64-A0B9-8E8202731F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D0C237-F8D9-4C64-A0B9-8E8202731F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21E14E43-0A21-46A5-9EFD-9B9A9D682C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21E14E43-0A21-46A5-9EFD-9B9A9D682C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21E14E43-0A21-46A5-9EFD-9B9A9D682C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21E14E43-0A21-46A5-9EFD-9B9A9D682C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1EBFA5-09DF-4E9C-8464-D1385285D71C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1EBFA5-09DF-4E9C-8464-D1385285D71C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1EBFA5-09DF-4E9C-8464-D1385285D71C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1EBFA5-09DF-4E9C-8464-D1385285D71C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD4EB349-9758-4339-B46B-52B646A1D430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4EB349-9758-4339-B46B-52B646A1D430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD4EB349-9758-4339-B46B-52B646A1D430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD4EB349-9758-4339-B46B-52B646A1D430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789822D6-D536-42B8-BA68-330433BC93E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789822D6-D536-42B8-BA68-330433BC93E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789822D6-D536-42B8-BA68-330433BC93E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789822D6-D536-42B8-BA68-330433BC93E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B67DB6A6-2215-4C30-A479-CCC261B619E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B67DB6A6-2215-4C30-A479-CCC261B619E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B67DB6A6-2215-4C30-A479-CCC261B619E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B67DB6A6-2215-4C30-A479-CCC261B619E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB0F546D-6CBE-4CCE-BC80-95F450077E28} = {EA554DF5-527D-4E58-A6DF-C24B324FE106}
+		{8DF5B43C-0C87-472F-AF58-8DE515CA43C9} = {EA554DF5-527D-4E58-A6DF-C24B324FE106}
+		{ADD133D2-21C4-4126-9587-C5E0B2BC4580} = {912DFA04-8681-4811-8C74-C19008994DA2}
+		{7A81463A-D148-4622-BE3C-1E220AC27080} = {912DFA04-8681-4811-8C74-C19008994DA2}
+		{232B2D17-917F-447E-B347-170C6E7D47FF} = {912DFA04-8681-4811-8C74-C19008994DA2}
+		{CC637795-28D2-4D2E-B680-CB7F0BC188E7} = {4DB922FC-6F41-45DA-A8A4-BD7831214243}
+		{E8D0C237-F8D9-4C64-A0B9-8E8202731F67} = {4DB922FC-6F41-45DA-A8A4-BD7831214243}
+		{21E14E43-0A21-46A5-9EFD-9B9A9D682C7B} = {8FA63A51-758C-4987-B3EA-3A4F54A21314}
+		{BF1EBFA5-09DF-4E9C-8464-D1385285D71C} = {8FA63A51-758C-4987-B3EA-3A4F54A21314}
+		{DD4EB349-9758-4339-B46B-52B646A1D430} = {0FDFB744-D24D-4845-92F3-0741F2C2C013}
+		{789822D6-D536-42B8-BA68-330433BC93E6} = {0FDFB744-D24D-4845-92F3-0741F2C2C013}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3407D2E-043C-4422-A516-6C26B17886F3}
+	EndGlobalSection
+EndGlobal

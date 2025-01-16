@@ -1,0 +1,91 @@
+{
+  "DockerPublish": {
+    "DefaultConfig": "default",
+    "Configs": [
+      {
+        "Name": "test",
+        "Desc": "默认的配置",
+        "BuildMode": 0,
+        "DockerfilePath": "",
+        "ServerIp": "192.168.1.121",
+        "Port": "22",
+        "Username": "root",
+        "Password": "Ing*zhixin@2022",
+        "IsSsh": false,
+        "ServerPath": "/root/hosts/BestShooter.WebAPI/upload",
+        "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+        "ImgLocalPath": "images",
+        "ImgServerPath": "/root/hosts/BestShooter.WebAPI/images",
+        "Containers": [
+          {
+            "Name": "bestshooter.webapi_01",
+            "PortString": "-p 9003:80",
+            "EnvString": "-e DOTNET_ENVIRONMENT=Testing",
+            "LimitCoreFile": true,
+            "ServerPath": "",
+            "IsDefault": true,
+            "ServerType": null,
+            "IsHost": false,
+            "IsAspNet": false
+          }
+        ]
+      },
+        {
+            "Name": "aws-host01",
+            "Desc": "",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "35.155.112.208",
+            "Port": "22",
+            "Username": "root",
+            "Password": "ivknOgGhUI5FlQRUSXsjs",
+            "IsSsh": false,
+            "ServerPath": "/home/ubuntu/hosts/BestShooter.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "images",
+            "ImgServerPath": "/root/services/BestShooter.WebAPI/images",
+            "Containers": [
+                {
+                    "Name": "bestshooter.webapi",
+                    "PortString": "9010",
+                    "EnvString": "",
+                    "LimitCoreFile": true,
+                    "ServerPath": "/home/ubuntu/hosts/BestShooter.WebAPI/bestshooter.webapi",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": true,
+                    "IsAspNet": true
+                }
+            ]
+        },
+        {
+            "Name": "default",
+            "Desc": "测试环境-qa",
+            "BuildMode": 0,
+            "DockerfilePath": "",
+            "ServerIp": "192.168.1.128",
+            "Port": "22",
+            "Username": "root",
+            "Password": "Ing*zhixin@2022",
+            "IsSsh": false,
+            "ServerPath": "/root/hosts/BestShooter.WebAPI/upload",
+            "ImageName": "mcr.microsoft.com/dotnet/aspnet:6.0",
+            "ImgLocalPath": "",
+            "ImgServerPath": "",
+            "Containers": [
+                {
+                    "Name": "bestshooter.webapi.01",
+                    "PortString": "-p 9003:80",
+                    "EnvString": "-e DOTNET_ENVIRONMENT=qa",
+                    "LimitCoreFile": true,
+                    "ServerPath": "",
+                    "IsDefault": true,
+                    "ServerType": null,
+                    "IsHost": false,
+                    "IsAspNet": false
+                }
+            ]
+        }
+    ]
+  }
+}

@@ -1,0 +1,1511 @@
+/******************************************************
+ * 此代码由代码生成器工具自动生成，请不要修改
+ * TinyFx代码生成器核心库版本号：1.0.0.0
+ * git: https://github.com/jh98net/TinyFx
+ * 文档生成时间：2023-05-25 15: 13:28
+ ******************************************************/
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Runtime.Serialization;
+using System.Text;
+using TinyFx;
+using TinyFx.Data;
+using TinyFx.Data.MySql;
+
+namespace Gold_ggk.DAL
+{
+    #region EO
+    /// <summary>
+    /// 实际下注筹码分组表
+    /// 【表 ggk_config_chips_group_copy1 的实体类】
+    /// </summary>
+    [DataContract]
+    public class Ggk_config_chips_group_copy1EO : IRowMapper<Ggk_config_chips_group_copy1EO>
+    {
+        /// <summary>
+        /// 构造函数 
+        /// </summary>
+        public Ggk_config_chips_group_copy1EO()
+        {
+        }
+        #region 主键原始值 & 主键集合
+
+        /// <summary>
+        /// 当前对象是否保存原始主键值，当修改了主键值时为 true
+        /// </summary>
+        public bool HasOriginal { get; protected set; }
+
+        private int _originalChipsID;
+        /// <summary>
+        /// 【数据库中的原始主键 ChipsID 值的副本，用于主键值更新】
+        /// </summary>
+        public int OriginalChipsID
+        {
+            get { return _originalChipsID; }
+            set { HasOriginal = true; _originalChipsID = value; }
+        }
+
+        private long _originalBetTotalAmount;
+        /// <summary>
+        /// 【数据库中的原始主键 BetTotalAmount 值的副本，用于主键值更新】
+        /// </summary>
+        public long OriginalBetTotalAmount
+        {
+            get { return _originalBetTotalAmount; }
+            set { HasOriginal = true; _originalBetTotalAmount = value; }
+        }
+        /// <summary>
+        /// 获取主键集合。key: 数据库字段名称, value: 主键值
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, object> GetPrimaryKeys()
+        {
+            return new Dictionary<string, object>() { { "ChipsID", ChipsID }, { "BetTotalAmount", BetTotalAmount }, };
+        }
+        /// <summary>
+        /// 获取主键集合JSON格式
+        /// </summary>
+        /// <returns></returns>
+        public string GetPrimaryKeysJson() => SerializerUtil.SerializeJson(GetPrimaryKeys());
+        #endregion // 主键原始值
+        #region 所有字段
+        /// <summary>
+        /// 下注Id
+        /// 【主键 int】
+        /// </summary>
+        [DataMember(Order = 1)]
+        public int ChipsID { get; set; }
+        /// <summary>
+        /// 实际下注额
+        /// 【主键 bigint】
+        /// </summary>
+        [DataMember(Order = 2)]
+        public long BetTotalAmount { get; set; }
+        /// <summary>
+        /// 运营商编码
+        /// 【字段 varchar(50)】
+        /// </summary>
+        [DataMember(Order = 3)]
+        public string OperatorID { get; set; }
+        /// <summary>
+        /// 货币编码（ISO 4217大写）
+        /// 【字段 varchar(5)】
+        /// </summary>
+        [DataMember(Order = 4)]
+        public string CurrencyID { get; set; }
+        /// <summary>
+        /// 
+        /// 【字段 text】
+        /// </summary>
+        [DataMember(Order = 5)]
+        public string Group { get; set; }
+        #endregion // 所有列
+        #region 实体映射
+
+        /// <summary>
+        /// 将IDataReader映射成实体对象
+        /// </summary>
+        /// <param name = "reader">只进结果集流</param>
+        /// <return>实体对象</return>
+        public Ggk_config_chips_group_copy1EO MapRow(IDataReader reader)
+        {
+            return MapDataReader(reader);
+        }
+
+        /// <summary>
+        /// 将IDataReader映射成实体对象
+        /// </summary>
+        /// <param name = "reader">只进结果集流</param>
+        /// <return>实体对象</return>
+        public static Ggk_config_chips_group_copy1EO MapDataReader(IDataReader reader)
+        {
+            Ggk_config_chips_group_copy1EO ret = new Ggk_config_chips_group_copy1EO();
+            ret.ChipsID = reader.ToInt32("ChipsID");
+            ret.OriginalChipsID = ret.ChipsID;
+            ret.BetTotalAmount = reader.ToInt64("BetTotalAmount");
+            ret.OriginalBetTotalAmount = ret.BetTotalAmount;
+            ret.OperatorID = reader.ToString("OperatorID");
+            ret.CurrencyID = reader.ToString("CurrencyID");
+            ret.Group = reader.ToString("Group");
+            return ret;
+        }
+
+        #endregion
+    }
+    #endregion // EO
+
+    #region MO
+    /// <summary>
+    /// 实际下注筹码分组表
+    /// 【表 ggk_config_chips_group_copy1 的操作类】
+    /// </summary>
+    public class Ggk_config_chips_group_copy1MO : MySqlTableMO<Ggk_config_chips_group_copy1EO>
+    {
+        /// <summary>
+        /// 表名
+        /// </summary>
+        public override string TableName { get; set; } = "`ggk_config_chips_group_copy1`";
+
+        #region Constructors
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name = "database">数据来源</param>
+        public Ggk_config_chips_group_copy1MO(MySqlDatabase database) : base(database) { }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name = "connectionStringName">配置文件.config中定义的连接字符串名称</param>
+        public Ggk_config_chips_group_copy1MO(string connectionStringName = null) : base(connectionStringName) { }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="connectionString">数据库连接字符串，如server=192.168.1.1;database=testdb;uid=root;pwd=root</param>
+        /// <param name="commandTimeout">CommandTimeout时间</param>
+        public Ggk_config_chips_group_copy1MO(string connectionString, int commandTimeout) : base(connectionString, commandTimeout) { }
+        #endregion // Constructors
+
+        #region  Add
+        /// <summary>
+        /// 插入数据
+        /// </summary>
+        /// <param name = "item">要插入的实体对象</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <param name="useIgnore_">是否使用INSERT INGORE</param>
+        /// <return>受影响的行数</return>
+        public override int Add(Ggk_config_chips_group_copy1EO item, TransactionManager tm_ = null, bool useIgnore_ = false)
+        {
+            RepairAddData(item, useIgnore_, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public override async Task<int> AddAsync(Ggk_config_chips_group_copy1EO item, TransactionManager tm_ = null, bool useIgnore_ = false)
+        {
+            RepairAddData(item, useIgnore_, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairAddData(Ggk_config_chips_group_copy1EO item, bool useIgnore_, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = useIgnore_ ? "INSERT INGORE" : "INSERT";
+            sql_ += $" INTO {TableName} (`ChipsID`, `BetTotalAmount`, `OperatorID`, `CurrencyID`, `Group`) VALUE (@ChipsID, @BetTotalAmount, @OperatorID, @CurrencyID, @Group);";
+            paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", item.ChipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", item.BetTotalAmount, MySqlDbType.Int64),
+                Database.CreateInParameter("@OperatorID", item.OperatorID, MySqlDbType.VarChar),
+                Database.CreateInParameter("@CurrencyID", item.CurrencyID, MySqlDbType.VarChar),
+                Database.CreateInParameter("@Group", item.Group != null ? item.Group : (object)DBNull.Value, MySqlDbType.Text),
+            };
+        }
+        public int AddByBatch(IEnumerable<Ggk_config_chips_group_copy1EO> items, int batchCount, TransactionManager tm_ = null)
+        {
+            var ret = 0;
+            foreach (var sql in BuildAddBatchSql(items, batchCount))
+            {
+                ret += Database.ExecSqlNonQuery(sql, tm_);
+            }
+            return ret;
+        }
+        public async Task<int> AddByBatchAsync(IEnumerable<Ggk_config_chips_group_copy1EO> items, int batchCount, TransactionManager tm_ = null)
+        {
+            var ret = 0;
+            foreach (var sql in BuildAddBatchSql(items, batchCount))
+            {
+                ret += await Database.ExecSqlNonQueryAsync(sql, tm_);
+            }
+            return ret;
+        }
+        private IEnumerable<string> BuildAddBatchSql(IEnumerable<Ggk_config_chips_group_copy1EO> items, int batchCount)
+        {
+            var count = 0;
+            var insertSql = $"INSERT INTO {TableName} (`ChipsID`, `BetTotalAmount`, `OperatorID`, `CurrencyID`, `Group`) VALUES ";
+            var sql = new StringBuilder();
+            foreach (var item in items)
+            {
+                count++;
+                sql.Append($"({item.ChipsID},{item.BetTotalAmount},'{item.OperatorID}','{item.CurrencyID}','{item.Group}'),");
+                if (count == batchCount)
+                {
+                    count = 0;
+                    sql.Insert(0, insertSql);
+                    var ret = sql.ToString().TrimEnd(',');
+                    sql.Clear();
+                    yield return ret;
+                }
+            }
+            if (sql.Length > 0)
+            {
+                sql.Insert(0, insertSql);
+                yield return sql.ToString().TrimEnd(',');
+            }
+        }
+        #endregion // Add
+
+        #region Remove
+        #region RemoveByPK
+        /// <summary>
+        /// 按主键删除
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        public int RemoveByPK(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            RepiarRemoveByPKData(chipsID, betTotalAmount, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> RemoveByPKAsync(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            RepiarRemoveByPKData(chipsID, betTotalAmount, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepiarRemoveByPKData(int chipsID, long betTotalAmount, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"DELETE FROM {TableName} WHERE `ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount";
+            paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+        }
+        /// <summary>
+        /// 删除指定实体对应的记录
+        /// </summary>
+        /// <param name = "item">要删除的实体</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int Remove(Ggk_config_chips_group_copy1EO item, TransactionManager tm_ = null)
+        {
+            return RemoveByPK(item.ChipsID, item.BetTotalAmount, tm_);
+        }
+        public async Task<int> RemoveAsync(Ggk_config_chips_group_copy1EO item, TransactionManager tm_ = null)
+        {
+            return await RemoveByPKAsync(item.ChipsID, item.BetTotalAmount, tm_);
+        }
+        #endregion // RemoveByPK
+
+        #region RemoveByXXX
+        #region RemoveByChipsID
+        /// <summary>
+        /// 按字段删除
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <param name="tm_">事务管理对象</param>
+        public int RemoveByChipsID(int chipsID, TransactionManager tm_ = null)
+        {
+            RepairRemoveByChipsIDData(chipsID, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> RemoveByChipsIDAsync(int chipsID, TransactionManager tm_ = null)
+        {
+            RepairRemoveByChipsIDData(chipsID, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairRemoveByChipsIDData(int chipsID, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"DELETE FROM {TableName} WHERE `ChipsID` = @ChipsID";
+            paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32));
+        }
+        #endregion // RemoveByChipsID
+        #region RemoveByBetTotalAmount
+        /// <summary>
+        /// 按字段删除
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        public int RemoveByBetTotalAmount(long betTotalAmount, TransactionManager tm_ = null)
+        {
+            RepairRemoveByBetTotalAmountData(betTotalAmount, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> RemoveByBetTotalAmountAsync(long betTotalAmount, TransactionManager tm_ = null)
+        {
+            RepairRemoveByBetTotalAmountData(betTotalAmount, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairRemoveByBetTotalAmountData(long betTotalAmount, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"DELETE FROM {TableName} WHERE `BetTotalAmount` = @BetTotalAmount";
+            paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64));
+        }
+        #endregion // RemoveByBetTotalAmount
+        #region RemoveByOperatorID
+        /// <summary>
+        /// 按字段删除
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name="tm_">事务管理对象</param>
+        public int RemoveByOperatorID(string operatorID, TransactionManager tm_ = null)
+        {
+            RepairRemoveByOperatorIDData(operatorID, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> RemoveByOperatorIDAsync(string operatorID, TransactionManager tm_ = null)
+        {
+            RepairRemoveByOperatorIDData(operatorID, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairRemoveByOperatorIDData(string operatorID, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"DELETE FROM {TableName} WHERE `OperatorID` = @OperatorID";
+            paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@OperatorID", operatorID, MySqlDbType.VarChar));
+        }
+        #endregion // RemoveByOperatorID
+        #region RemoveByCurrencyID
+        /// <summary>
+        /// 按字段删除
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name="tm_">事务管理对象</param>
+        public int RemoveByCurrencyID(string currencyID, TransactionManager tm_ = null)
+        {
+            RepairRemoveByCurrencyIDData(currencyID, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> RemoveByCurrencyIDAsync(string currencyID, TransactionManager tm_ = null)
+        {
+            RepairRemoveByCurrencyIDData(currencyID, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairRemoveByCurrencyIDData(string currencyID, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"DELETE FROM {TableName} WHERE `CurrencyID` = @CurrencyID";
+            paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@CurrencyID", currencyID, MySqlDbType.VarChar));
+        }
+        #endregion // RemoveByCurrencyID
+        #region RemoveByGroup
+        /// <summary>
+        /// 按字段删除
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <param name="tm_">事务管理对象</param>
+        public int RemoveByGroup(string group, TransactionManager tm_ = null)
+        {
+            RepairRemoveByGroupData(group, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> RemoveByGroupAsync(string group, TransactionManager tm_ = null)
+        {
+            RepairRemoveByGroupData(group, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairRemoveByGroupData(string group, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"DELETE FROM {TableName} WHERE " + (group != null ? "`Group` = @Group" : "`Group` IS NULL");
+            paras_ = new List<MySqlParameter>();
+            if (group != null)
+                paras_.Add(Database.CreateInParameter("@Group", group, MySqlDbType.Text));
+        }
+        #endregion // RemoveByGroup
+        #endregion // RemoveByXXX
+
+        #region RemoveByFKOrUnique
+        #endregion // RemoveByFKOrUnique
+        #endregion //Remove
+
+        #region Put
+        #region PutItem
+        /// <summary>
+        /// 更新实体到数据库
+        /// </summary>
+        /// <param name = "item">要更新的实体对象</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int Put(Ggk_config_chips_group_copy1EO item, TransactionManager tm_ = null)
+        {
+            RepairPutData(item, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> PutAsync(Ggk_config_chips_group_copy1EO item, TransactionManager tm_ = null)
+        {
+            RepairPutData(item, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairPutData(Ggk_config_chips_group_copy1EO item, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"UPDATE {TableName} SET `ChipsID` = @ChipsID, `BetTotalAmount` = @BetTotalAmount, `OperatorID` = @OperatorID, `CurrencyID` = @CurrencyID, `Group` = @Group WHERE `ChipsID` = @ChipsID_Original AND `BetTotalAmount` = @BetTotalAmount_Original";
+            paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", item.ChipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", item.BetTotalAmount, MySqlDbType.Int64),
+                Database.CreateInParameter("@OperatorID", item.OperatorID, MySqlDbType.VarChar),
+                Database.CreateInParameter("@CurrencyID", item.CurrencyID, MySqlDbType.VarChar),
+                Database.CreateInParameter("@Group", item.Group != null ? item.Group : (object)DBNull.Value, MySqlDbType.Text),
+                Database.CreateInParameter("@ChipsID_Original", item.HasOriginal ? item.OriginalChipsID : item.ChipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount_Original", item.HasOriginal ? item.OriginalBetTotalAmount : item.BetTotalAmount, MySqlDbType.Int64),
+            };
+        }
+
+        /// <summary>
+        /// 更新实体集合到数据库
+        /// </summary>
+        /// <param name = "items">要更新的实体对象集合</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int Put(IEnumerable<Ggk_config_chips_group_copy1EO> items, TransactionManager tm_ = null)
+        {
+            int ret = 0;
+            foreach (var item in items)
+            {
+                ret += Put(item, tm_);
+            }
+            return ret;
+        }
+        public async Task<int> PutAsync(IEnumerable<Ggk_config_chips_group_copy1EO> items, TransactionManager tm_ = null)
+        {
+            int ret = 0;
+            foreach (var item in items)
+            {
+                ret += await PutAsync(item, tm_);
+            }
+            return ret;
+        }
+        #endregion // PutItem
+
+        #region PutByPK
+        /// <summary>
+        /// 按主键更新指定列数据
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name = "set_">更新的列数据</param>
+        /// <param name="values_">参数值</param>
+        /// <return>受影响的行数</return>
+        public int PutByPK(int chipsID, long betTotalAmount, string set_, params object[] values_)
+        {
+            return Put(set_, "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", ConcatValues(values_, chipsID, betTotalAmount));
+        }
+        public async Task<int> PutByPKAsync(int chipsID, long betTotalAmount, string set_, params object[] values_)
+        {
+            return await PutAsync(set_, "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", ConcatValues(values_, chipsID, betTotalAmount));
+        }
+        /// <summary>
+        /// 按主键更新指定列数据
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name = "set_">更新的列数据</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <param name="values_">参数值</param>
+        /// <return>受影响的行数</return>
+        public int PutByPK(int chipsID, long betTotalAmount, string set_, TransactionManager tm_, params object[] values_)
+        {
+            return Put(set_, "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", tm_, ConcatValues(values_, chipsID, betTotalAmount));
+        }
+        public async Task<int> PutByPKAsync(int chipsID, long betTotalAmount, string set_, TransactionManager tm_, params object[] values_)
+        {
+            return await PutAsync(set_, "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", tm_, ConcatValues(values_, chipsID, betTotalAmount));
+        }
+        /// <summary>
+        /// 按主键更新指定列数据
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name = "set_">更新的列数据</param>
+        /// <param name="paras_">参数值</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutByPK(int chipsID, long betTotalAmount, string set_, IEnumerable<MySqlParameter> paras_, TransactionManager tm_ = null)
+        {
+            var newParas_ = new List<MySqlParameter>() {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return Put(set_, "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", ConcatParameters(paras_, newParas_), tm_);
+        }
+        public async Task<int> PutByPKAsync(int chipsID, long betTotalAmount, string set_, IEnumerable<MySqlParameter> paras_, TransactionManager tm_ = null)
+        {
+            var newParas_ = new List<MySqlParameter>() {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return await PutAsync(set_, "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", ConcatParameters(paras_, newParas_), tm_);
+        }
+        #endregion // PutByPK
+
+        #region PutXXX
+        #region PutChipsID
+
+        /// <summary>
+        /// 更新一列数据
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutChipsID(int chipsID, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `ChipsID` = @ChipsID";
+            var parameter_ = Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32);
+            return Database.ExecSqlNonQuery(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        public async Task<int> PutChipsIDAsync(int chipsID, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `ChipsID` = @ChipsID";
+            var parameter_ = Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32);
+            return await Database.ExecSqlNonQueryAsync(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        #endregion // PutChipsID
+        #region PutBetTotalAmount
+
+        /// <summary>
+        /// 更新一列数据
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutBetTotalAmount(long betTotalAmount, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `BetTotalAmount` = @BetTotalAmount";
+            var parameter_ = Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64);
+            return Database.ExecSqlNonQuery(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        public async Task<int> PutBetTotalAmountAsync(long betTotalAmount, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `BetTotalAmount` = @BetTotalAmount";
+            var parameter_ = Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64);
+            return await Database.ExecSqlNonQueryAsync(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        #endregion // PutBetTotalAmount
+        #region PutOperatorID
+        /// <summary>
+        /// 按主键更新列数据
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutOperatorIDByPK(int chipsID, long betTotalAmount, string operatorID, TransactionManager tm_ = null)
+        {
+            RepairPutOperatorIDByPKData(chipsID, betTotalAmount, operatorID, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> PutOperatorIDByPKAsync(int chipsID, long betTotalAmount, string operatorID, TransactionManager tm_ = null)
+        {
+            RepairPutOperatorIDByPKData(chipsID, betTotalAmount, operatorID, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairPutOperatorIDByPKData(int chipsID, long betTotalAmount, string operatorID, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"UPDATE {TableName} SET `OperatorID` = @OperatorID  WHERE `ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount";
+            paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@OperatorID", operatorID, MySqlDbType.VarChar),
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+        }
+
+        /// <summary>
+        /// 更新一列数据
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutOperatorID(string operatorID, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `OperatorID` = @OperatorID";
+            var parameter_ = Database.CreateInParameter("@OperatorID", operatorID, MySqlDbType.VarChar);
+            return Database.ExecSqlNonQuery(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        public async Task<int> PutOperatorIDAsync(string operatorID, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `OperatorID` = @OperatorID";
+            var parameter_ = Database.CreateInParameter("@OperatorID", operatorID, MySqlDbType.VarChar);
+            return await Database.ExecSqlNonQueryAsync(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        #endregion // PutOperatorID
+        #region PutCurrencyID
+        /// <summary>
+        /// 按主键更新列数据
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutCurrencyIDByPK(int chipsID, long betTotalAmount, string currencyID, TransactionManager tm_ = null)
+        {
+            RepairPutCurrencyIDByPKData(chipsID, betTotalAmount, currencyID, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> PutCurrencyIDByPKAsync(int chipsID, long betTotalAmount, string currencyID, TransactionManager tm_ = null)
+        {
+            RepairPutCurrencyIDByPKData(chipsID, betTotalAmount, currencyID, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairPutCurrencyIDByPKData(int chipsID, long betTotalAmount, string currencyID, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"UPDATE {TableName} SET `CurrencyID` = @CurrencyID  WHERE `ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount";
+            paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@CurrencyID", currencyID, MySqlDbType.VarChar),
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+        }
+
+        /// <summary>
+        /// 更新一列数据
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutCurrencyID(string currencyID, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `CurrencyID` = @CurrencyID";
+            var parameter_ = Database.CreateInParameter("@CurrencyID", currencyID, MySqlDbType.VarChar);
+            return Database.ExecSqlNonQuery(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        public async Task<int> PutCurrencyIDAsync(string currencyID, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `CurrencyID` = @CurrencyID";
+            var parameter_ = Database.CreateInParameter("@CurrencyID", currencyID, MySqlDbType.VarChar);
+            return await Database.ExecSqlNonQueryAsync(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        #endregion // PutCurrencyID
+        #region PutGroup
+        /// <summary>
+        /// 按主键更新列数据
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// /// <param name = "group"></param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutGroupByPK(int chipsID, long betTotalAmount, string group, TransactionManager tm_ = null)
+        {
+            RepairPutGroupByPKData(chipsID, betTotalAmount, group, out string sql_, out List<MySqlParameter> paras_);
+            return Database.ExecSqlNonQuery(sql_, paras_, tm_);
+        }
+        public async Task<int> PutGroupByPKAsync(int chipsID, long betTotalAmount, string group, TransactionManager tm_ = null)
+        {
+            RepairPutGroupByPKData(chipsID, betTotalAmount, group, out string sql_, out List<MySqlParameter> paras_);
+            return await Database.ExecSqlNonQueryAsync(sql_, paras_, tm_);
+        }
+        private void RepairPutGroupByPKData(int chipsID, long betTotalAmount, string group, out string sql_, out List<MySqlParameter> paras_)
+        {
+            sql_ = $"UPDATE {TableName} SET `Group` = @Group  WHERE `ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount";
+            paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@Group", group != null ? group : (object)DBNull.Value, MySqlDbType.Text),
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+        }
+
+        /// <summary>
+        /// 更新一列数据
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>受影响的行数</return>
+        public int PutGroup(string group, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `Group` = @Group";
+            var parameter_ = Database.CreateInParameter("@Group", group != null ? group : (object)DBNull.Value, MySqlDbType.Text);
+            return Database.ExecSqlNonQuery(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        public async Task<int> PutGroupAsync(string group, TransactionManager tm_ = null)
+        {
+            string sql_ = $"UPDATE {TableName} SET `Group` = @Group";
+            var parameter_ = Database.CreateInParameter("@Group", group != null ? group : (object)DBNull.Value, MySqlDbType.Text);
+            return await Database.ExecSqlNonQueryAsync(sql_, new MySqlParameter[] { parameter_ }, tm_);
+        }
+        #endregion // PutGroup
+        #endregion // PutXXX
+        #endregion // Put
+
+        #region Set
+
+        /// <summary>
+        /// 插入或者更新数据
+        /// </summary>
+        /// <param name = "item">要更新的实体对象</param>
+        /// <param name="tm">事务管理对象</param>
+        /// <return>true:插入操作；false:更新操作</return>
+        public bool Set(Ggk_config_chips_group_copy1EO item, TransactionManager tm = null)
+        {
+            bool ret = true;
+            if (GetByPK(item.ChipsID, item.BetTotalAmount) == null)
+            {
+                Add(item, tm);
+            }
+            else
+            {
+                Put(item, tm);
+                ret = false;
+            }
+            return ret;
+        }
+        public async Task<bool> SetAsync(Ggk_config_chips_group_copy1EO item, TransactionManager tm = null)
+        {
+            bool ret = true;
+            if (GetByPK(item.ChipsID, item.BetTotalAmount) == null)
+            {
+                await AddAsync(item, tm);
+            }
+            else
+            {
+                await PutAsync(item, tm);
+                ret = false;
+            }
+            return ret;
+        }
+
+        #endregion // Set
+
+        #region Get
+        #region GetByPK
+        /// <summary>
+        /// 按 PK（主键） 查询
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <param name="isForUpdate_">是否使用FOR UPDATE锁行</param>
+        /// <return></return>
+        public Ggk_config_chips_group_copy1EO GetByPK(int chipsID, long betTotalAmount, TransactionManager tm_ = null, bool isForUpdate_ = false)
+        {
+            RepairGetByPKData(chipsID, betTotalAmount, out string sql_, out List<MySqlParameter> paras_, isForUpdate_);
+            return Database.ExecSqlSingle(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        public async Task<Ggk_config_chips_group_copy1EO> GetByPKAsync(int chipsID, long betTotalAmount, TransactionManager tm_ = null, bool isForUpdate_ = false)
+        {
+            RepairGetByPKData(chipsID, betTotalAmount, out string sql_, out List<MySqlParameter> paras_, isForUpdate_);
+            return await Database.ExecSqlSingleAsync(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        private void RepairGetByPKData(int chipsID, long betTotalAmount, out string sql_, out List<MySqlParameter> paras_, bool isForUpdate_ = false)
+        {
+            sql_ = BuildSelectSQL("`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", 0, null, null, isForUpdate_);
+            paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+        }
+        #endregion // GetByPK
+
+        #region GetXXXByPK
+
+        /// <summary>
+        /// 按主键查询 ChipsID（字段）
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return></return>
+        public int GetChipsIDByPK(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (int)GetScalar("`ChipsID`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+        public async Task<int> GetChipsIDByPKAsync(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (int)await GetScalarAsync("`ChipsID`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+
+        /// <summary>
+        /// 按主键查询 BetTotalAmount（字段）
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return></return>
+        public long GetBetTotalAmountByPK(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (long)GetScalar("`BetTotalAmount`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+        public async Task<long> GetBetTotalAmountByPKAsync(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (long)await GetScalarAsync("`BetTotalAmount`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+
+        /// <summary>
+        /// 按主键查询 OperatorID（字段）
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return></return>
+        public string GetOperatorIDByPK(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (string)GetScalar("`OperatorID`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+        public async Task<string> GetOperatorIDByPKAsync(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (string)await GetScalarAsync("`OperatorID`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+
+        /// <summary>
+        /// 按主键查询 CurrencyID（字段）
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return></return>
+        public string GetCurrencyIDByPK(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (string)GetScalar("`CurrencyID`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+        public async Task<string> GetCurrencyIDByPKAsync(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (string)await GetScalarAsync("`CurrencyID`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+
+        /// <summary>
+        /// 按主键查询 Group（字段）
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return></return>
+        public string GetGroupByPK(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (string)GetScalar("`Group`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+        public async Task<string> GetGroupByPKAsync(int chipsID, long betTotalAmount, TransactionManager tm_ = null)
+        {
+            var paras_ = new List<MySqlParameter>()
+            {
+                Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32),
+                Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64),
+            };
+            return (string)await GetScalarAsync("`Group`", "`ChipsID` = @ChipsID AND `BetTotalAmount` = @BetTotalAmount", paras_, tm_);
+        }
+        #endregion // GetXXXByPK
+        #region GetByXXX
+        #region GetByChipsID
+
+        /// <summary>
+        /// 按 ChipsID（字段） 查询
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByChipsID(int chipsID)
+        {
+            return GetByChipsID(chipsID, 0, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByChipsIDAsync(int chipsID)
+        {
+            return await GetByChipsIDAsync(chipsID, 0, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 ChipsID（字段） 查询
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByChipsID(int chipsID, TransactionManager tm_)
+        {
+            return GetByChipsID(chipsID, 0, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByChipsIDAsync(int chipsID, TransactionManager tm_)
+        {
+            return await GetByChipsIDAsync(chipsID, 0, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 ChipsID（字段） 查询
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <param name = "top_">获取行数</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByChipsID(int chipsID, int top_)
+        {
+            return GetByChipsID(chipsID, top_, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByChipsIDAsync(int chipsID, int top_)
+        {
+            return await GetByChipsIDAsync(chipsID, top_, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 ChipsID（字段） 查询
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByChipsID(int chipsID, int top_, TransactionManager tm_)
+        {
+            return GetByChipsID(chipsID, top_, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByChipsIDAsync(int chipsID, int top_, TransactionManager tm_)
+        {
+            return await GetByChipsIDAsync(chipsID, top_, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 ChipsID（字段） 查询
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByChipsID(int chipsID, string sort_)
+        {
+            return GetByChipsID(chipsID, 0, sort_, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByChipsIDAsync(int chipsID, string sort_)
+        {
+            return await GetByChipsIDAsync(chipsID, 0, sort_, null);
+        }
+
+        /// <summary>
+        /// 按 ChipsID（字段） 查询
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByChipsID(int chipsID, string sort_, TransactionManager tm_)
+        {
+            return GetByChipsID(chipsID, 0, sort_, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByChipsIDAsync(int chipsID, string sort_, TransactionManager tm_)
+        {
+            return await GetByChipsIDAsync(chipsID, 0, sort_, tm_);
+        }
+
+        /// <summary>
+        /// 按 ChipsID（字段） 查询
+        /// </summary>
+        /// /// <param name = "chipsID">下注Id</param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByChipsID(int chipsID, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL("`ChipsID` = @ChipsID", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32));
+            return Database.ExecSqlList(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByChipsIDAsync(int chipsID, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL("`ChipsID` = @ChipsID", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@ChipsID", chipsID, MySqlDbType.Int32));
+            return await Database.ExecSqlListAsync(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        #endregion // GetByChipsID
+        #region GetByBetTotalAmount
+
+        /// <summary>
+        /// 按 BetTotalAmount（字段） 查询
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByBetTotalAmount(long betTotalAmount)
+        {
+            return GetByBetTotalAmount(betTotalAmount, 0, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByBetTotalAmountAsync(long betTotalAmount)
+        {
+            return await GetByBetTotalAmountAsync(betTotalAmount, 0, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 BetTotalAmount（字段） 查询
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByBetTotalAmount(long betTotalAmount, TransactionManager tm_)
+        {
+            return GetByBetTotalAmount(betTotalAmount, 0, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByBetTotalAmountAsync(long betTotalAmount, TransactionManager tm_)
+        {
+            return await GetByBetTotalAmountAsync(betTotalAmount, 0, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 BetTotalAmount（字段） 查询
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name = "top_">获取行数</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByBetTotalAmount(long betTotalAmount, int top_)
+        {
+            return GetByBetTotalAmount(betTotalAmount, top_, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByBetTotalAmountAsync(long betTotalAmount, int top_)
+        {
+            return await GetByBetTotalAmountAsync(betTotalAmount, top_, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 BetTotalAmount（字段） 查询
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByBetTotalAmount(long betTotalAmount, int top_, TransactionManager tm_)
+        {
+            return GetByBetTotalAmount(betTotalAmount, top_, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByBetTotalAmountAsync(long betTotalAmount, int top_, TransactionManager tm_)
+        {
+            return await GetByBetTotalAmountAsync(betTotalAmount, top_, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 BetTotalAmount（字段） 查询
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByBetTotalAmount(long betTotalAmount, string sort_)
+        {
+            return GetByBetTotalAmount(betTotalAmount, 0, sort_, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByBetTotalAmountAsync(long betTotalAmount, string sort_)
+        {
+            return await GetByBetTotalAmountAsync(betTotalAmount, 0, sort_, null);
+        }
+
+        /// <summary>
+        /// 按 BetTotalAmount（字段） 查询
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByBetTotalAmount(long betTotalAmount, string sort_, TransactionManager tm_)
+        {
+            return GetByBetTotalAmount(betTotalAmount, 0, sort_, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByBetTotalAmountAsync(long betTotalAmount, string sort_, TransactionManager tm_)
+        {
+            return await GetByBetTotalAmountAsync(betTotalAmount, 0, sort_, tm_);
+        }
+
+        /// <summary>
+        /// 按 BetTotalAmount（字段） 查询
+        /// </summary>
+        /// /// <param name = "betTotalAmount">实际下注额</param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByBetTotalAmount(long betTotalAmount, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL("`BetTotalAmount` = @BetTotalAmount", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64));
+            return Database.ExecSqlList(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByBetTotalAmountAsync(long betTotalAmount, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL("`BetTotalAmount` = @BetTotalAmount", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@BetTotalAmount", betTotalAmount, MySqlDbType.Int64));
+            return await Database.ExecSqlListAsync(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        #endregion // GetByBetTotalAmount
+        #region GetByOperatorID
+
+        /// <summary>
+        /// 按 OperatorID（字段） 查询
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByOperatorID(string operatorID)
+        {
+            return GetByOperatorID(operatorID, 0, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByOperatorIDAsync(string operatorID)
+        {
+            return await GetByOperatorIDAsync(operatorID, 0, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 OperatorID（字段） 查询
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByOperatorID(string operatorID, TransactionManager tm_)
+        {
+            return GetByOperatorID(operatorID, 0, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByOperatorIDAsync(string operatorID, TransactionManager tm_)
+        {
+            return await GetByOperatorIDAsync(operatorID, 0, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 OperatorID（字段） 查询
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name = "top_">获取行数</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByOperatorID(string operatorID, int top_)
+        {
+            return GetByOperatorID(operatorID, top_, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByOperatorIDAsync(string operatorID, int top_)
+        {
+            return await GetByOperatorIDAsync(operatorID, top_, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 OperatorID（字段） 查询
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByOperatorID(string operatorID, int top_, TransactionManager tm_)
+        {
+            return GetByOperatorID(operatorID, top_, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByOperatorIDAsync(string operatorID, int top_, TransactionManager tm_)
+        {
+            return await GetByOperatorIDAsync(operatorID, top_, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 OperatorID（字段） 查询
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByOperatorID(string operatorID, string sort_)
+        {
+            return GetByOperatorID(operatorID, 0, sort_, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByOperatorIDAsync(string operatorID, string sort_)
+        {
+            return await GetByOperatorIDAsync(operatorID, 0, sort_, null);
+        }
+
+        /// <summary>
+        /// 按 OperatorID（字段） 查询
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByOperatorID(string operatorID, string sort_, TransactionManager tm_)
+        {
+            return GetByOperatorID(operatorID, 0, sort_, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByOperatorIDAsync(string operatorID, string sort_, TransactionManager tm_)
+        {
+            return await GetByOperatorIDAsync(operatorID, 0, sort_, tm_);
+        }
+
+        /// <summary>
+        /// 按 OperatorID（字段） 查询
+        /// </summary>
+        /// /// <param name = "operatorID">运营商编码</param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByOperatorID(string operatorID, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL("`OperatorID` = @OperatorID", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@OperatorID", operatorID, MySqlDbType.VarChar));
+            return Database.ExecSqlList(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByOperatorIDAsync(string operatorID, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL("`OperatorID` = @OperatorID", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@OperatorID", operatorID, MySqlDbType.VarChar));
+            return await Database.ExecSqlListAsync(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        #endregion // GetByOperatorID
+        #region GetByCurrencyID
+
+        /// <summary>
+        /// 按 CurrencyID（字段） 查询
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByCurrencyID(string currencyID)
+        {
+            return GetByCurrencyID(currencyID, 0, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByCurrencyIDAsync(string currencyID)
+        {
+            return await GetByCurrencyIDAsync(currencyID, 0, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 CurrencyID（字段） 查询
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByCurrencyID(string currencyID, TransactionManager tm_)
+        {
+            return GetByCurrencyID(currencyID, 0, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByCurrencyIDAsync(string currencyID, TransactionManager tm_)
+        {
+            return await GetByCurrencyIDAsync(currencyID, 0, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 CurrencyID（字段） 查询
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name = "top_">获取行数</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByCurrencyID(string currencyID, int top_)
+        {
+            return GetByCurrencyID(currencyID, top_, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByCurrencyIDAsync(string currencyID, int top_)
+        {
+            return await GetByCurrencyIDAsync(currencyID, top_, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 CurrencyID（字段） 查询
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByCurrencyID(string currencyID, int top_, TransactionManager tm_)
+        {
+            return GetByCurrencyID(currencyID, top_, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByCurrencyIDAsync(string currencyID, int top_, TransactionManager tm_)
+        {
+            return await GetByCurrencyIDAsync(currencyID, top_, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 CurrencyID（字段） 查询
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByCurrencyID(string currencyID, string sort_)
+        {
+            return GetByCurrencyID(currencyID, 0, sort_, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByCurrencyIDAsync(string currencyID, string sort_)
+        {
+            return await GetByCurrencyIDAsync(currencyID, 0, sort_, null);
+        }
+
+        /// <summary>
+        /// 按 CurrencyID（字段） 查询
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByCurrencyID(string currencyID, string sort_, TransactionManager tm_)
+        {
+            return GetByCurrencyID(currencyID, 0, sort_, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByCurrencyIDAsync(string currencyID, string sort_, TransactionManager tm_)
+        {
+            return await GetByCurrencyIDAsync(currencyID, 0, sort_, tm_);
+        }
+
+        /// <summary>
+        /// 按 CurrencyID（字段） 查询
+        /// </summary>
+        /// /// <param name = "currencyID">货币编码（ISO 4217大写）</param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByCurrencyID(string currencyID, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL("`CurrencyID` = @CurrencyID", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@CurrencyID", currencyID, MySqlDbType.VarChar));
+            return Database.ExecSqlList(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByCurrencyIDAsync(string currencyID, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL("`CurrencyID` = @CurrencyID", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            paras_.Add(Database.CreateInParameter("@CurrencyID", currencyID, MySqlDbType.VarChar));
+            return await Database.ExecSqlListAsync(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        #endregion // GetByCurrencyID
+        #region GetByGroup
+
+        /// <summary>
+        /// 按 Group（字段） 查询
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByGroup(string group)
+        {
+            return GetByGroup(group, 0, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByGroupAsync(string group)
+        {
+            return await GetByGroupAsync(group, 0, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 Group（字段） 查询
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByGroup(string group, TransactionManager tm_)
+        {
+            return GetByGroup(group, 0, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByGroupAsync(string group, TransactionManager tm_)
+        {
+            return await GetByGroupAsync(group, 0, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 Group（字段） 查询
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <param name = "top_">获取行数</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByGroup(string group, int top_)
+        {
+            return GetByGroup(group, top_, string.Empty, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByGroupAsync(string group, int top_)
+        {
+            return await GetByGroupAsync(group, top_, string.Empty, null);
+        }
+
+        /// <summary>
+        /// 按 Group（字段） 查询
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByGroup(string group, int top_, TransactionManager tm_)
+        {
+            return GetByGroup(group, top_, string.Empty, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByGroupAsync(string group, int top_, TransactionManager tm_)
+        {
+            return await GetByGroupAsync(group, top_, string.Empty, tm_);
+        }
+
+        /// <summary>
+        /// 按 Group（字段） 查询
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByGroup(string group, string sort_)
+        {
+            return GetByGroup(group, 0, sort_, null);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByGroupAsync(string group, string sort_)
+        {
+            return await GetByGroupAsync(group, 0, sort_, null);
+        }
+
+        /// <summary>
+        /// 按 Group（字段） 查询
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByGroup(string group, string sort_, TransactionManager tm_)
+        {
+            return GetByGroup(group, 0, sort_, tm_);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByGroupAsync(string group, string sort_, TransactionManager tm_)
+        {
+            return await GetByGroupAsync(group, 0, sort_, tm_);
+        }
+
+        /// <summary>
+        /// 按 Group（字段） 查询
+        /// </summary>
+        /// /// <param name = "group"></param>
+        /// <param name = "top_">获取行数</param>
+        /// <param name = "sort_">排序表达式</param>
+        /// <param name="tm_">事务管理对象</param>
+        /// <return>实体对象集合</return>
+        public List<Ggk_config_chips_group_copy1EO> GetByGroup(string group, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL(group != null ? "`Group` = @Group" : "`Group` IS NULL", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            if (group != null)
+                paras_.Add(Database.CreateInParameter("@Group", group, MySqlDbType.Text));
+            return Database.ExecSqlList(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        public async Task<List<Ggk_config_chips_group_copy1EO>> GetByGroupAsync(string group, int top_, string sort_, TransactionManager tm_)
+        {
+            var sql_ = BuildSelectSQL(group != null ? "`Group` = @Group" : "`Group` IS NULL", top_, sort_);
+            var paras_ = new List<MySqlParameter>();
+            if (group != null)
+                paras_.Add(Database.CreateInParameter("@Group", group, MySqlDbType.Text));
+            return await Database.ExecSqlListAsync(sql_, paras_, tm_, Ggk_config_chips_group_copy1EO.MapDataReader);
+        }
+        #endregion // GetByGroup
+        #endregion // GetByXXX
+        #endregion // Get
+    }
+    #endregion // MO
+}
